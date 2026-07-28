@@ -1,243 +1,389 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Siva Madhavan - Resume</title>
-  <style>
-    :root {
-      --primary: #1e293b;
-      --accent: #2563eb;
-      --text: #334155;
-      --bg: #f8fafc;
-      --card: #ffffff;
-      --border: #e2e8f0;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Siva Madhavan — Backend Engineer</title>
+<meta name="description" content="Siva Madhavan — Backend Engineer specializing in healthcare SaaS platforms, AI integrations, and data pipelines. 5+ years building scalable systems with Django, Azure, and AWS.">
+<meta property="og:title" content="Siva Madhavan — Backend Engineer">
+<meta property="og:description" content="Backend Engineer building scalable healthcare SaaS platforms, AI integrations, and data pipelines.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230E6E56%22/><text x=%2250%22 y=%2266%22 font-size=%2258%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22monospace%22>S</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EFF3F1;
+  --card:#FFFFFF;
+  --ink:#10181B;
+  --ink-soft:#4A5654;
+  --ink-faint:#7C8886;
+  --accent:#0E6E56;
+  --accent-soft:#DCEEE8;
+  --accent-text:#0A4E3D;
+  --line:#D4DBD8;
+  --radius:10px;
+  --font-display:'Space Grotesk',sans-serif;
+  --font-body:'Inter',sans-serif;
+  --font-mono:'IBM Plex Mono',monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#0E1413;
+    --card:#161E1C;
+    --ink:#EAEFED;
+    --ink-soft:#AEB8B5;
+    --ink-faint:#748480;
+    --accent:#3FBE9B;
+    --accent-soft:#173029;
+    --accent-text:#6FD4B5;
+    --line:#263230;
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--font-body);
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.6;
+  padding:3rem 1.25rem 5rem;
+}
+a{color:var(--accent-text);}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
 
-```
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  background-color: var(--bg);
-  color: var(--text);
-  line-height: 1.5;
-  padding: 2rem 1rem;
+.wrap{max-width:880px;margin:0 auto;}
+
+/* Header */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  flex-wrap:wrap;
+  gap:1.5rem;
+  margin-bottom:2.5rem;
+}
+.eyebrow{
+  font-family:var(--font-mono);
+  font-size:12px;
+  color:var(--accent-text);
+  background:var(--accent-soft);
+  display:inline-block;
+  padding:0.25rem 0.6rem;
+  border-radius:6px;
+  margin-bottom:0.9rem;
+  letter-spacing:0.02em;
+}
+h1{
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:2.4rem;
+  letter-spacing:-0.01em;
+  color:var(--ink);
+}
+.role-line{
+  font-family:var(--font-mono);
+  font-size:0.95rem;
+  color:var(--ink-soft);
+  margin-top:0.4rem;
+}
+.contact-row{
+  font-family:var(--font-mono);
+  font-size:0.82rem;
+  color:var(--ink-soft);
+  margin-top:1rem;
+  display:flex;
+  flex-wrap:wrap;
+  gap:0.4rem 0;
+}
+.contact-row a{text-decoration:none;color:var(--ink-soft);}
+.contact-row a:hover{color:var(--accent-text);}
+.contact-row .sep{margin:0 0.55rem;color:var(--ink-faint);}
+
+.btn{
+  font-family:var(--font-mono);
+  background:var(--ink);
+  color:var(--paper);
+  border:none;
+  padding:0.6rem 1rem;
+  border-radius:8px;
+  font-size:0.82rem;
+  cursor:pointer;
+  white-space:nowrap;
+}
+.btn:hover{background:var(--accent);}
+
+/* Sections */
+section{margin-bottom:2.75rem;}
+.section-head{
+  display:flex;
+  align-items:baseline;
+  gap:0.6rem;
+  margin-bottom:1.1rem;
+}
+.section-head .index{
+  font-family:var(--font-mono);
+  font-size:0.78rem;
+  color:var(--accent-text);
+}
+h2{
+  font-family:var(--font-display);
+  font-size:1rem;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:0.06em;
+  color:var(--ink);
+}
+.summary{font-size:0.98rem;color:var(--ink-soft);max-width:68ch;}
+
+/* Skills */
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:1rem;
+}
+.skill-cat{
+  font-family:var(--font-mono);
+  font-size:0.72rem;
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+  color:var(--ink-faint);
+  margin-bottom:0.45rem;
+}
+.chip-row{display:flex;flex-wrap:wrap;gap:0.4rem;}
+.chip{
+  font-family:var(--font-mono);
+  font-size:0.78rem;
+  background:var(--card);
+  border:1px solid var(--line);
+  color:var(--ink-soft);
+  padding:0.25rem 0.55rem;
+  border-radius:6px;
 }
 
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  background: var(--card);
-  padding: 2.5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  border: 1px solid var(--border);
+/* Timeline (signature element) */
+.timeline{position:relative;padding-left:1.6rem;}
+.timeline::before{
+  content:"";
+  position:absolute;
+  left:5px;
+  top:8px;
+  bottom:8px;
+  width:1px;
+  background:var(--line);
+}
+.entry{position:relative;margin-bottom:2rem;}
+.entry:last-child{margin-bottom:0;}
+.entry::before{
+  content:"";
+  position:absolute;
+  left:-1.6rem;
+  top:0.35rem;
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:var(--accent);
+  box-shadow:0 0 0 3px var(--accent-soft);
+}
+.entry-head{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:0.3rem 1rem;
+  font-weight:600;
+  color:var(--ink);
+  font-size:0.98rem;
+}
+.entry-dates{
+  font-family:var(--font-mono);
+  font-size:0.76rem;
+  color:var(--ink-faint);
+  white-space:nowrap;
+}
+.entry-org{
+  font-family:var(--font-mono);
+  font-size:0.78rem;
+  color:var(--accent-text);
+  margin:0.2rem 0 0.6rem;
+}
+.entry ul{padding-left:1.1rem;font-size:0.92rem;color:var(--ink-soft);}
+.entry li{margin-bottom:0.4rem;}
+
+/* Two column layout for lower content */
+.grid-2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:2.5rem;
+}
+@media (max-width:640px){
+  .grid-2{grid-template-columns:1fr;}
+  h1{font-size:1.9rem;}
+  header{flex-direction:column;}
 }
 
-header {
-  border-bottom: 2px solid var(--border);
-  padding-bottom: 1.5rem;
-  margin-bottom: 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
+.edu-item{margin-bottom:1rem;}
+.edu-head{display:flex;justify-content:space-between;font-weight:600;font-size:0.95rem;flex-wrap:wrap;gap:0.3rem;}
+.edu-sub{font-family:var(--font-mono);font-size:0.78rem;color:var(--ink-faint);margin-top:0.15rem;}
+.awards{list-style:none;font-size:0.9rem;color:var(--ink-soft);margin-top:0.6rem;}
+.awards li{padding-left:1rem;position:relative;margin-bottom:0.4rem;}
+.awards li::before{content:"›";position:absolute;left:0;color:var(--accent-text);}
+
+.reveal{opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none;}
+  html{scroll-behavior:auto;}
 }
 
-h1 { font-size: 2rem; color: var(--primary); font-weight: 700; }
-.title { font-size: 1.1rem; color: var(--accent); font-weight: 600; margin-bottom: 0.5rem; }
-
-.contact-info {
-  font-size: 0.9rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
+@media print{
+  body{background:white;padding:0;}
+  .no-print{display:none !important;}
+  .entry::before{box-shadow:none;}
 }
-
-.contact-info a { color: var(--accent); text-decoration: none; }
-
-.actions { display: flex; gap: 0.5rem; }
-.btn {
-  background-color: var(--accent);
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  font-weight: 600;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 0.85rem;
-}
-
-section { margin-bottom: 1.5rem; }
-h2 {
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--primary);
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 0.3rem;
-  margin-bottom: 0.8rem;
-}
-
-.summary { font-size: 0.95rem; }
-
-.item { margin-bottom: 1.2rem; }
-.item-header {
-  display: flex;
-  justify-content: space-between;
-  font-weight: 600;
-  color: var(--primary);
-  font-size: 0.95rem;
-}
-.item-sub {
-  font-size: 0.85rem;
-  color: #64748b;
-  margin-bottom: 0.4rem;
-  font-weight: 500;
-}
-
-ul { padding-left: 1.2rem; font-size: 0.9rem; }
-li { margin-bottom: 0.35rem; }
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 0.8rem;
-  font-size: 0.9rem;
-}
-.skill-cat { font-weight: 600; color: var(--primary); }
-
-@media print {
-  body { background: white; padding: 0; }
-  .container { box-shadow: none; border: none; padding: 0; }
-  .no-print { display: none !important; }
-}
-```
-
-  </style>
+</style>
 </head>
 <body>
 
-<div class="container">
+<div class="wrap">
 
   <header>
     <div>
+      <span class="eyebrow">status: open to opportunities</span>
       <h1>Siva Madhavan</h1>
-      <div class="title">Backend Engineer | AI & Data Platform</div>
-      <div class="contact-info">
-        <span>📍 Chennai, India</span>
-        <span>📧 <a href="mailto:sivamadhavan619@gmail.com">sivamadhavan619@gmail.com</a></span>
-        <span>📞 +91 6374698287</span>
-        <span>🔗 <a href="https://github.com/SivaMadhavan" target="_blank">github.com/SivaMadhavan</a></span>
+      <div class="role-line">Backend Engineer — AI &amp; Data Platform</div>
+      <div class="contact-row">
+        <span>Chennai, India</span>
+        <span class="sep">·</span>
+        <a href="mailto:sivamadhavan619@gmail.com">sivamadhavan619@gmail.com</a>
+        <span class="sep">·</span>
+        <span>+91 6374698287</span>
+        <span class="sep">·</span>
+        <a href="https://github.com/SivaMadhavan" target="_blank" rel="noopener">github.com/SivaMadhavan</a>
       </div>
     </div>
-
-```
-<div class="actions no-print">
-  <button class="btn" onclick="window.print()">Save as PDF</button>
-</div>
-```
-
+    <button class="btn no-print" onclick="window.print()">Save as PDF</button>
   </header>
 
-  <section>
-    <h2>Professional Summary</h2>
-    <p class="summary">
-      Results-driven Backend Engineer with 5+ years of experience building scalable healthcare SaaS platforms serving US providers and patients. Expertise in designing high-performance REST APIs, real-time systems, and AI-powered solutions using Azure OpenAI and AWS. Proven ability to improve system efficiency, automate clinical workflows, and deliver production-grade features that drive measurable business impact.
-    </p>
+  <section class="reveal">
+    <div class="section-head"><span class="index">01</span><h2>Summary</h2></div>
+    <p class="summary">Results-driven backend engineer with 5+ years building scalable healthcare SaaS platforms serving US providers and patients. Focused on high-performance REST APIs, real-time systems, and AI-powered features using Azure OpenAI and AWS. Track record of improving system efficiency, automating clinical workflows, and shipping production-grade features with measurable business impact.</p>
   </section>
 
-  <section>
-    <h2>Technical Skills</h2>
+  <section class="reveal">
+    <div class="section-head"><span class="index">02</span><h2>Stack</h2></div>
     <div class="skills-grid">
-      <div><span class="skill-cat">Languages:</span> Python, SQL, C, C++</div>
-      <div><span class="skill-cat">Backend:</span> Django, DRF, FastAPI, Celery, Redis, WebSockets</div>
-      <div><span class="skill-cat">AI & Cloud:</span> Azure OpenAI, Azure Speech, AWS (EC2, S3, CloudWatch)</div>
-      <div><span class="skill-cat">Data & Tools:</span> MySQL, MariaDB, Power BI, Git, Postman</div>
+      <div>
+        <div class="skill-cat">Languages</div>
+        <div class="chip-row">
+          <span class="chip">Python</span><span class="chip">SQL</span><span class="chip">C</span><span class="chip">C++</span>
+        </div>
+      </div>
+      <div>
+        <div class="skill-cat">Backend</div>
+        <div class="chip-row">
+          <span class="chip">Django</span><span class="chip">DRF</span><span class="chip">FastAPI</span><span class="chip">Celery</span><span class="chip">Redis</span><span class="chip">WebSockets</span>
+        </div>
+      </div>
+      <div>
+        <div class="skill-cat">AI &amp; Cloud</div>
+        <div class="chip-row">
+          <span class="chip">Azure OpenAI</span><span class="chip">Azure Speech</span><span class="chip">AWS EC2</span><span class="chip">S3</span><span class="chip">CloudWatch</span>
+        </div>
+      </div>
+      <div>
+        <div class="skill-cat">Data &amp; Tools</div>
+        <div class="chip-row">
+          <span class="chip">MySQL</span><span class="chip">MariaDB</span><span class="chip">Power BI</span><span class="chip">Git</span><span class="chip">Postman</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section>
-    <h2>Professional Experience</h2>
+  <section class="reveal">
+    <div class="section-head"><span class="index">03</span><h2>Experience</h2></div>
+    <div class="timeline">
 
-```
-<div class="item">
-  <div class="item-header">
-    <span>Backend Engineer – AI & Platform</span>
-    <span>Jun 2021 – Present</span>
-  </div>
-  <div class="item-sub">HealthViewX | Payoda Technologies</div>
-  <ul>
-    <li>Architected an AI-powered clinical documentation system generating SOAP notes from telehealth conversations, reducing manual effort significantly.</li>
-    <li>Integrated Azure OpenAI and Speech services enabling real-time multilingual transcription and intelligent summarization.</li>
-    <li>Led development of a Pain Management Module used by thousands of users, improving treatment tracking by 30%.</li>
-    <li>Boosted API and database performance by 50% through query optimization, indexing, and ORM improvements.</li>
-    <li>Integrated third-party systems (Twilio, RingCentral, eFax, Availity) to streamline communication workflows and improve operational efficiency by 40%.</li>
-    <li>Connected wearable and medical devices (Fitbit, iHealth), enhancing provider productivity by 25% and contributing to revenue growth.</li>
-    <li>Implemented secure JWT-based SSO authentication, improving user experience and system security.</li>
-    <li>Developed 20+ analytical SQL reports supporting clinical and business decision-making.</li>
-  </ul>
-</div>
+      <div class="entry">
+        <div class="entry-head"><span>Backend Engineer — AI &amp; Platform</span><span class="entry-dates">Jun 2021 — present</span></div>
+        <div class="entry-org">HealthViewX · Payoda Technologies</div>
+        <ul>
+          <li>Architected an AI-powered clinical documentation system generating SOAP notes from telehealth conversations, significantly reducing manual effort.</li>
+          <li>Integrated Azure OpenAI and Speech services for real-time multilingual transcription and intelligent summarization.</li>
+          <li>Led development of a pain management module used by thousands of users, improving treatment tracking by 30%.</li>
+          <li>Boosted API and database performance by 50% through query optimization, indexing, and ORM improvements.</li>
+          <li>Integrated third-party systems (Twilio, RingCentral, eFax, Availity), improving operational efficiency by 40%.</li>
+          <li>Connected wearable and medical devices (Fitbit, iHealth), improving provider productivity by 25%.</li>
+          <li>Implemented secure JWT-based SSO authentication, improving system security and user experience.</li>
+          <li>Developed 20+ analytical SQL reports supporting clinical and business decision-making.</li>
+        </ul>
+      </div>
 
-<div class="item">
-  <div class="item-header">
-    <span>Data Engineer & Analyst</span>
-    <span>May 2024 – Present</span>
-  </div>
-  <div class="item-sub">HealthViewX | Payoda Technologies</div>
-  <ul>
-    <li>Built scalable ETL pipelines for multi-source healthcare data using Python and SQL.</li>
-    <li>Designed Power BI dashboards and embedded analytics to improve stakeholder visibility and insights.</li>
-  </ul>
-</div>
+      <div class="entry">
+        <div class="entry-head"><span>Data Engineer &amp; Analyst</span><span class="entry-dates">May 2024 — present</span></div>
+        <div class="entry-org">HealthViewX · Payoda Technologies</div>
+        <ul>
+          <li>Built scalable ETL pipelines for multi-source healthcare data using Python and SQL.</li>
+          <li>Designed Power BI dashboards and embedded analytics to improve stakeholder visibility.</li>
+        </ul>
+      </div>
 
-<div class="item">
-  <div class="item-header">
-    <span>Software Engineer Intern</span>
-    <span>Jan 2021 – Mar 2021</span>
-  </div>
-  <div class="item-sub">Payoda Technologies</div>
-  <ul>
-    <li>Developed internal tools and contributed to backend services using Django and MySQL.</li>
-  </ul>
-</div>
-```
+      <div class="entry">
+        <div class="entry-head"><span>Software Engineer Intern</span><span class="entry-dates">Jan 2021 — Mar 2021</span></div>
+        <div class="entry-org">Payoda Technologies</div>
+        <ul>
+          <li>Developed internal tools and contributed to backend services using Django and MySQL.</li>
+        </ul>
+      </div>
 
+    </div>
   </section>
 
-  <section>
-    <h2>Projects</h2>
-    <div class="item">
-      <div class="item-header">
-        <span>A3 – Ambient AI Chrome Extension</span>
-      </div>
-      <div class="item-sub">Real-time Audio Capture & AI Summarization</div>
+  <section class="reveal">
+    <div class="section-head"><span class="index">04</span><h2>Projects</h2></div>
+    <div class="entry" style="padding-left:0;">
+      <div class="entry-head"><span>A3 — Ambient AI Chrome Extension</span></div>
+      <div class="entry-org">Real-time audio capture &amp; AI summarization</div>
       <ul>
         <li>Built and published a Chrome extension that captures live audio and generates structured summaries using Azure OpenAI.</li>
-        <li>Implemented real-time transcription, session controls, and automated cloud upload pipeline.</li>
+        <li>Implemented real-time transcription, session controls, and an automated cloud upload pipeline.</li>
         <li>Designed dual audio stream handling for accurate processing in telehealth environments.</li>
       </ul>
     </div>
   </section>
 
-  <section>
-    <h2>Education & Awards</h2>
-    <div class="item">
-      <div class="item-header">
-        <span>B.E. Electronics & Communication Engineering</span>
-        <span>GPA: 7.48</span>
+  <section class="reveal grid-2">
+    <div>
+      <div class="section-head"><span class="index">05</span><h2>Education</h2></div>
+      <div class="edu-item">
+        <div class="edu-head"><span>B.E. Electronics &amp; Communication Engineering</span><span>GPA 7.48</span></div>
+        <div class="edu-sub">PSG College of Technology</div>
       </div>
-      <div class="item-sub">PSG College of Technology</div>
     </div>
-    <ul>
-      <li>3× Spot Award – Payoda Technologies</li>
-      <li>Extra Mile Every Time Award – Payoda Technologies</li>
-    </ul>
+    <div>
+      <div class="section-head"><span class="index">06</span><h2>Awards</h2></div>
+      <ul class="awards">
+        <li>3× Spot Award — Payoda Technologies</li>
+        <li>Extra Mile Every Time Award — Payoda Technologies</li>
+      </ul>
+    </div>
   </section>
 
 </div>
+
+<script>
+  var els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, {threshold:0.1});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('visible'); });
+  }
+</script>
 
 </body>
 </html>
