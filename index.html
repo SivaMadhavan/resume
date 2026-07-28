@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -14,127 +15,117 @@
       --border: #e2e8f0;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.5;
-      padding: 2rem 1rem;
-    }
+```
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  padding: 2rem 1rem;
+}
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      background: var(--card);
-      padding: 2.5rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-      border: 1px solid var(--border);
-    }
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--card);
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border);
+}
 
-    /* Header */
-    header {
-      border-bottom: 2px solid var(--border);
-      padding-bottom: 1.5rem;
-      margin-bottom: 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
+header {
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
 
-    h1 { font-size: 2rem; color: var(--primary); font-weight: 700; }
-    .title { font-size: 1.1rem; color: var(--accent); font-weight: 600; margin-bottom: 0.5rem; }
-    
-    .contact-info {
-      font-size: 0.9rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-    }
+h1 { font-size: 2rem; color: var(--primary); font-weight: 700; }
+.title { font-size: 1.1rem; color: var(--accent); font-weight: 600; margin-bottom: 0.5rem; }
 
-    .contact-info a { color: var(--accent); text-decoration: none; }
-    .contact-info a:hover { text-decoration: underline; }
+.contact-info {
+  font-size: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
 
-    .actions { display: flex; gap: 0.5rem; }
-    .btn {
-      background-color: var(--accent);
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      font-size: 0.85rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-    .btn:hover { opacity: 0.9; }
+.contact-info a { color: var(--accent); text-decoration: none; }
 
-    /* Sections */
-    section { margin-bottom: 1.5rem; }
-    h2 {
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--primary);
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 0.3rem;
-      margin-bottom: 0.8rem;
-    }
+.actions { display: flex; gap: 0.5rem; }
+.btn {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
 
-    .summary { font-size: 0.95rem; }
+section { margin-bottom: 1.5rem; }
+h2 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.8rem;
+}
 
-    /* Experience & Projects */
-    .item { margin-bottom: 1.2rem; }
-    .item-header {
-      display: flex;
-      justify-content: space-between;
-      font-weight: 600;
-      color: var(--primary);
-      font-size: 0.95rem;
-    }
-    .item-sub {
-      font-size: 0.85rem;
-      color: #64748b;
-      margin-bottom: 0.4rem;
-      font-weight: 500;
-    }
-    
-    ul { list-style-type: disc; padding-left: 1.2rem; font-size: 0.9rem; }
-    li { margin-bottom: 0.3rem; }
+.summary { font-size: 0.95rem; }
 
-    /* Skills Grid */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 0.8rem;
-      font-size: 0.9rem;
-    }
-    .skill-cat { font-weight: 600; color: var(--primary); }
+.item { margin-bottom: 1.2rem; }
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  color: var(--primary);
+  font-size: 0.95rem;
+}
+.item-sub {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+}
 
-    /* Print Styles for Save as PDF */
-    @media print {
-      body { background: white; padding: 0; }
-      .container { box-shadow: none; border: none; padding: 0; width: 100%; max-width: 100%; }
-      .no-print { display: none !important; }
-      a { text-decoration: none; color: inherit; }
-    }
+ul { padding-left: 1.2rem; font-size: 0.9rem; }
+li { margin-bottom: 0.35rem; }
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.8rem;
+  font-size: 0.9rem;
+}
+.skill-cat { font-weight: 600; color: var(--primary); }
+
+@media print {
+  body { background: white; padding: 0; }
+  .container { box-shadow: none; border: none; padding: 0; }
+  .no-print { display: none !important; }
+}
+```
+
   </style>
 </head>
 <body>
 
 <div class="container">
-  
-  <!-- Header Section -->
+
   <header>
     <div>
       <h1>Siva Madhavan</h1>
-      <div class="title">Backend Engineer (AI & Platform)</div>
+      <div class="title">Backend Engineer | AI & Data Platform</div>
       <div class="contact-info">
         <span>📍 Chennai, India</span>
         <span>📧 <a href="mailto:sivamadhavan619@gmail.com">sivamadhavan619@gmail.com</a></span>
@@ -142,107 +133,107 @@
         <span>🔗 <a href="https://github.com/SivaMadhavan" target="_blank">github.com/SivaMadhavan</a></span>
       </div>
     </div>
-    
-    <!-- Action Buttons -->
-    <div class="actions no-print">
-      <button class="btn" onclick="window.print()">📄 Save as PDF</button>
-      <a class="btn" href="resume.pdf" download="Siva_Madhavan_Resume.pdf">📥 Download PDF</a>
-    </div>
+
+```
+<div class="actions no-print">
+  <button class="btn" onclick="window.print()">Save as PDF</button>
+</div>
+```
+
   </header>
 
-  <!-- Professional Summary -->
   <section>
     <h2>Professional Summary</h2>
     <p class="summary">
-      Backend Engineer with 5+ years of experience building healthcare SaaS products used by providers and patients across the US. Specialized in REST API development, real-time systems, and AI integrations using Azure OpenAI and AWS. Published a Chrome extension to the Chrome Web Store. Proven track record of improving system performance, streamlining clinical workflows, and delivering impactful features at scale.
+      Results-driven Backend Engineer with 5+ years of experience building scalable healthcare SaaS platforms serving US providers and patients. Expertise in designing high-performance REST APIs, real-time systems, and AI-powered solutions using Azure OpenAI and AWS. Proven ability to improve system efficiency, automate clinical workflows, and deliver production-grade features that drive measurable business impact.
     </p>
   </section>
 
-  <!-- Technical Skills -->
   <section>
     <h2>Technical Skills</h2>
     <div class="skills-grid">
       <div><span class="skill-cat">Languages:</span> Python, SQL, C, C++</div>
-      <div><span class="skill-cat">Backend & APIs:</span> Django, DRF, Django Channels, FastAPI, Celery, Redis, WebSockets, REST APIs</div>
-      <div><span class="skill-cat">AI & Cloud:</span> Azure OpenAI, Azure Speech, ACS, AWS (EC2, S3, CloudWatch)</div>
-      <div><span class="skill-cat">Databases & Tools:</span> MariaDB, MySQL, Power BI, Git, Manifest V3, Postman</div>
+      <div><span class="skill-cat">Backend:</span> Django, DRF, FastAPI, Celery, Redis, WebSockets</div>
+      <div><span class="skill-cat">AI & Cloud:</span> Azure OpenAI, Azure Speech, AWS (EC2, S3, CloudWatch)</div>
+      <div><span class="skill-cat">Data & Tools:</span> MySQL, MariaDB, Power BI, Git, Postman</div>
     </div>
   </section>
 
-  <!-- Professional Experience -->
   <section>
     <h2>Professional Experience</h2>
 
-    <div class="item">
-      <div class="item-header">
-        <span>Backend Engineer – AI & Platform</span>
-        <span>Jun 2021 – Present</span>
-      </div>
-      <div class="item-sub">HealthViewX, Payoda Technologies</div>
-      <ul>
-        <li>Built an AI-powered clinical documentation pipeline auto-generating SOAP notes from telehealth transcripts.</li>
-        <li>Integrated Azure OpenAI & Azure Speech services supporting real-time transcription across multilingual interactions.</li>
-        <li>Designed & shipped a Pain Management Module used by thousands of US providers/patients, improving treatment tracking by 30%.</li>
-        <li>Improved API and database performance by 50% via query optimization, indexing, and ORM refactoring.</li>
-        <li>Integrated communication platforms (Twilio, RingCentral, eFax, Availity), boosting operational efficiency by 40%.</li>
-        <li>Integrated health devices (Fitbit, iHealth, Cardiowell), increasing provider efficiency by 25% and contributing to 20% revenue growth.</li>
-        <li>Implemented JWT-based SSO authentication, enhancing security and user experience by 35%.</li>
-        <li>Developed 20+ SQL reports enabling data-driven decision-making for clinical and operational stakeholders.</li>
-      </ul>
-    </div>
+```
+<div class="item">
+  <div class="item-header">
+    <span>Backend Engineer – AI & Platform</span>
+    <span>Jun 2021 – Present</span>
+  </div>
+  <div class="item-sub">HealthViewX | Payoda Technologies</div>
+  <ul>
+    <li>Architected an AI-powered clinical documentation system generating SOAP notes from telehealth conversations, reducing manual effort significantly.</li>
+    <li>Integrated Azure OpenAI and Speech services enabling real-time multilingual transcription and intelligent summarization.</li>
+    <li>Led development of a Pain Management Module used by thousands of users, improving treatment tracking by 30%.</li>
+    <li>Boosted API and database performance by 50% through query optimization, indexing, and ORM improvements.</li>
+    <li>Integrated third-party systems (Twilio, RingCentral, eFax, Availity) to streamline communication workflows and improve operational efficiency by 40%.</li>
+    <li>Connected wearable and medical devices (Fitbit, iHealth), enhancing provider productivity by 25% and contributing to revenue growth.</li>
+    <li>Implemented secure JWT-based SSO authentication, improving user experience and system security.</li>
+    <li>Developed 20+ analytical SQL reports supporting clinical and business decision-making.</li>
+  </ul>
+</div>
 
-    <div class="item">
-      <div class="item-header">
-        <span>Data Engineer & Analyst</span>
-        <span>May 2024 – Present</span>
-      </div>
-      <div class="item-sub">HealthViewX, Payoda Technologies</div>
-      <ul>
-        <li>Built and maintained ETL pipelines for multi-source data ingestion, transformation, and loading using Python and SQL.</li>
-        <li>Developed Power BI dashboards and embedded analytics into web apps, improving stakeholder visibility.</li>
-      </ul>
-    </div>
+<div class="item">
+  <div class="item-header">
+    <span>Data Engineer & Analyst</span>
+    <span>May 2024 – Present</span>
+  </div>
+  <div class="item-sub">HealthViewX | Payoda Technologies</div>
+  <ul>
+    <li>Built scalable ETL pipelines for multi-source healthcare data using Python and SQL.</li>
+    <li>Designed Power BI dashboards and embedded analytics to improve stakeholder visibility and insights.</li>
+  </ul>
+</div>
 
-    <div class="item">
-      <div class="item-header">
-        <span>Software Engineer Intern</span>
-        <span>Jan 2021 – Mar 2021</span>
-      </div>
-      <div class="item-sub">Payoda Technologies</div>
-      <ul>
-        <li>Developed full-stack internal applications and contributed to early HealthViewX backend features using Django and MySQL.</li>
-      </ul>
-    </div>
+<div class="item">
+  <div class="item-header">
+    <span>Software Engineer Intern</span>
+    <span>Jan 2021 – Mar 2021</span>
+  </div>
+  <div class="item-sub">Payoda Technologies</div>
+  <ul>
+    <li>Developed internal tools and contributed to backend services using Django and MySQL.</li>
+  </ul>
+</div>
+```
+
   </section>
 
-  <!-- Featured Projects -->
   <section>
-    <h2>Featured Projects</h2>
+    <h2>Projects</h2>
     <div class="item">
       <div class="item-header">
-        <span>A3 – Ambient Agentic AI (Chrome Extension)</span>
-        <span>Chrome Web Store</span>
+        <span>A3 – Ambient AI Chrome Extension</span>
       </div>
-      <div class="item-sub">Live Audio Capture & Real-time AI Summarization</div>
+      <div class="item-sub">Real-time Audio Capture & AI Summarization</div>
       <ul>
-        <li>Built and published a Chrome extension capturing live audio from telehealth sessions to auto-generate structured summaries using Azure OpenAI.</li>
-        <li>Implemented real-time transcription, session recording controls (pause/resume), dual audio stream management, and automated cloud upload.</li>
+        <li>Built and published a Chrome extension that captures live audio and generates structured summaries using Azure OpenAI.</li>
+        <li>Implemented real-time transcription, session controls, and automated cloud upload pipeline.</li>
+        <li>Designed dual audio stream handling for accurate processing in telehealth environments.</li>
       </ul>
     </div>
   </section>
 
-  <!-- Education & Awards -->
   <section>
     <h2>Education & Awards</h2>
     <div class="item">
       <div class="item-header">
-        <span>B.E. Electronics & Communications — PSG College of Technology</span>
+        <span>B.E. Electronics & Communication Engineering</span>
         <span>GPA: 7.48</span>
       </div>
+      <div class="item-sub">PSG College of Technology</div>
     </div>
     <ul>
-      <li><strong>3× Spot Award</strong> – Payoda Technologies</li>
-      <li><strong>Extra Mile Every Time Award</strong> – Payoda Technologies</li>
+      <li>3× Spot Award – Payoda Technologies</li>
+      <li>Extra Mile Every Time Award – Payoda Technologies</li>
     </ul>
   </section>
 
